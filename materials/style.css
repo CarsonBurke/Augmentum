@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    color: white;
+    scroll-behavior: smooth;
+    background: var(--secondaryShade);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    --lightPurple: rgb(174, 0, 255);
+    --purple: rgb(123, 0, 224);
+    --darkPurple: rgb(83, 0, 151);
+    --lightGreen: rgb(0, 255, 0);
+    --green: rgb(0, 212, 0);
+    --darkGreen: rgb(0, 184, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: initial;
+    font-family: "poppins", "sans-serif";
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Outlined.eot);
+    /* For IE6-8 */
+    src: local('Material Icons'), local('MaterialIcons-Outlined'), url(https://example.com/MaterialIcons-Outlined.woff2) format('woff2'), url(https://example.com/MaterialIcons-Outlined.woff) format('woff'), url(https://example.com/MaterialIcons-Outlined.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+
+/* Template */
+
+.button {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 20px;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 10px 20px 0;
+    transition: all 0.2s;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    width: fit-content;
+    font-size: 18px;
+    margin: auto;
+}
+
+.button:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0 4px 12px 0, inset rgba(0, 0, 0, 0.2) 0 0 0 10000px;
+}
+
+.button:focus {
+    filter: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 3px 10px 0;
+}
+
+.greenButton {
+    background-color: var(--green);
+}
+
+.greenButton:focus {
+    outline: 2px solid var(--lightGreen);
+}
+
+.purpleButton {
+    background-color: var(--purple);
+}
+
+.purpleButton:focus {
+    outline: 2px solid var(--lightPurple);
+}
+
+
+/* UI */
+
+.uiParent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uiChild {
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 20px 60px 0;
+    border-radius: 6px;
+}
+
+.uiHeader {
+    background: whitesmoke;
+    color: black;
+    padding: 20px 50px;
+    text-align: center;
+    font-weight: 550;
+    font-size: 28px;
+}
+
+.uiContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
+}
+
+
+/* Custom UI */
+
+.gameHeader {
+    font-size: 38px;
+}
