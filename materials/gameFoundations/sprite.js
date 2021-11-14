@@ -1,0 +1,6 @@
+class Sprite {
+    constructor() {
+
+
+    }
+}

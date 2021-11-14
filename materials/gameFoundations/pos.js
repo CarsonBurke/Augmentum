@@ -1,0 +1,6 @@
+class Pos {
+    constructor() {
+
+
+    }
+}
