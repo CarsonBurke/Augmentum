@@ -4,9 +4,10 @@ window.addEventListener('load', init)
 
 function init() {
 
-    // Find theme and set as it
+    // Find theme and set as it. If not theme set to light
 
-    const theme = localStorage.getItem('theme')
+    let theme = localStorage.getItem('theme') | undefined
+    if (!theme) theme = 'light'
     setTheme(theme)
 }
 
