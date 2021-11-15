@@ -8,4 +8,10 @@ const tickSpeed = 100
 
 //
 
-const mapEl = document.getElementById('map')
+const gameCount = 1
+const playersPerGame = 1
+
+const gameWidth = 500
+const gameHeight = 500
+
+let ID = 0

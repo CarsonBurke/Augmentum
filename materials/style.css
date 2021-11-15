@@ -197,3 +197,10 @@ body {
 .gameHeader {
     font-size: 38px;
 }
+
+
+/* Game */
+
+.canvas {
+    background: var(--foreground3);
+}
