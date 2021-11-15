@@ -4,9 +4,8 @@ body {
     padding: 0;
     overflow-x: hidden;
     overflow-y: hidden;
-    color: white;
     scroll-behavior: smooth;
-    background: var(--secondaryShade);
+    background: var(--foreground1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,9 +13,38 @@ body {
     --lightPurple: rgb(174, 0, 255);
     --purple: rgb(123, 0, 224);
     --darkPurple: rgb(83, 0, 151);
+    --lightRed: rgb(255, 0, 0);
+    --red: rgb(214, 0, 0);
+    --darkRed: rgb(151, 0, 0);
+    --lightBlue: rgb(0, 151, 238);
+    --blue: rgb(5, 80, 219);
+    --darkBlue: rgb(0, 64, 241);
     --lightGreen: rgb(0, 255, 0);
     --green: rgb(0, 212, 0);
     --darkGreen: rgb(0, 184, 0);
+}
+
+.lightMode {
+    color: black;
+    --foreground1: white;
+    --foreground2: whitesmoke;
+    --foreground3: white;
+}
+
+.darkMode {
+    color: white;
+    --foreground1: rgb(29, 29, 29);
+    --foreground2: rgb(45, 45, 45);
+    --foreground3: rgb(55, 55, 55);
+}
+
+@keyframes load {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 * {
@@ -28,16 +56,14 @@ body {
 }
 
 @font-face {
-    font-family: 'Material Icons';
+    font-family: 'Material Icons Outlined';
     font-style: normal;
     font-weight: 400;
-    src: url(https://example.com/MaterialIcons-Outlined.eot);
-    /* For IE6-8 */
-    src: local('Material Icons'), local('MaterialIcons-Outlined'), url(https://example.com/MaterialIcons-Outlined.woff2) format('woff2'), url(https://example.com/MaterialIcons-Outlined.woff) format('woff'), url(https://example.com/MaterialIcons-Outlined.ttf) format('truetype');
+    src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v90/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2) format('woff2');
 }
 
 .material-icons {
-    font-family: 'Material Icons';
+    font-family: 'Material Icons Outlined', 'Material Icons';
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
@@ -65,17 +91,21 @@ body {
 .button {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: fit-content;
     gap: 5px;
-    padding: 8px 20px;
+    padding: 8px 30px;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.15) 0 10px 20px 0;
     transition: all 0.2s;
     cursor: pointer;
     user-select: none;
     border: none;
-    width: fit-content;
     font-size: 18px;
+    font-weight: 500;
     margin: auto;
+    text-decoration: none;
+    outline: 2px solid transparent;
 }
 
 .button:hover {
@@ -103,6 +133,26 @@ body {
     outline: 2px solid var(--lightPurple);
 }
 
+.blueButton {
+    background-color: var(--blue);
+}
+
+.blueButton:focus {
+    outline: 2px solid var(--lightBlue);
+}
+
+.redButton {
+    background-color: var(--red);
+}
+
+.redButton:focus {
+    outline: 2px solid var(--lightRed);
+}
+
+.hidden {
+    display: none !important;
+}
+
 
 /* UI */
 
@@ -122,11 +172,12 @@ body {
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.25) 0 20px 60px 0;
     border-radius: 6px;
+    overflow: hidden;
+    background: var(--foreground3);
 }
 
 .uiHeader {
-    background: whitesmoke;
-    color: black;
+    background: var(--foreground2);
     padding: 20px 50px;
     text-align: center;
     font-weight: 550;
@@ -137,7 +188,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 10px;
+    padding: 20px 10px;
 }
 
 

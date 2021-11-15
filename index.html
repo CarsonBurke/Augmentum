@@ -5,27 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" type="text/css" href="materials/style.css">
+
     <title>Augmentum</title>
 </head>
 
-<body>
-
-    <canvas id="map"></canvas>
+<body class="lightMode">
 
     <div class="uiParent">
-        <div class="uiChild home">
+        <div class="uiChild animate floatUp" id="home">
 
             <h2 class="uiHeader gameHeader">Augmentum</h2>
 
             <div class="uiContent">
 
-                <button class="button greenButton" id="playButton">Play Game</button>
-                <a class="button purpleButton" tabindex="-1"><span class="material-icons-outlined">
-                    favorite_border
-                    </span>Donate</a>
+                <button class="button greenButton animate" data-show-value='0' onclick="initEnv()">
+                    <span class="material-icons">play_arrow</span>Play
+                </button>
+
+                <button class="button blueButton animate" data-show-value='0' onclick="toggleUI('home', 'settings')">
+                    <span class="material-icons">settings</span>Settings
+                </button>
+
+                <a class="button purpleButton animate" data-show-value='0' tabindex="-1" target="blank" href="">
+                    <span class="material-icons">favorite_border</span>Donate
+                </a>
 
             </div>
+        </div>
+        <div class="uiChild hidden animate floatUp" id="settings">
+
+            <h2 class="uiHeader gameHeader">Settings</h2>
+
+            <div class="uiContent">
+
+                <button class="button blueButton animate" data-show-value='0' id="themeButton" onclick="toggleTheme()">
+                    <span class="material-icons">light_mode</span>Toggle theme
+                </button>
+
+                <button class="button redButton animate" data-show-value='0' id="themeButton" onclick="toggleUI('settings', 'home')">
+                    <span class="material-icons">arrow_back</span>Back
+                </button>
+
+            </div>
+
         </div>
     </div>
 
@@ -33,8 +57,11 @@
     <!-- General -->
 
     <script src="materials/script.js"></script>
-    <script src="materials/index.js"></script>
-    <script src="materials/env.js"></script>
+    <script src="materials/scroller.js"></script>
+
+    <script src="materials/game/env/env.js"></script>
+    <script src="materials/game/env/initEnv.js"></script>
+    <script src="materials/game/env/runEnv.js"></script>
 
     <!-- Object functions -->
 
