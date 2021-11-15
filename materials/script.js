@@ -61,7 +61,7 @@ function toggleTheme() {
 function setTheme(theme) {
 
     // Set recorded theme as theme, style body accordingly
-
+    
     localStorage.setItem('theme', theme)
 
     if (theme == 'dark') {
