@@ -5,10 +5,8 @@ window.addEventListener('load', init)
 function init() {
 
     // Find theme and set as it. If not theme set to light
-
-    let theme = localStorage.getItem('theme') | undefined
-    if (!theme) theme = 'light'
-    setTheme(theme)
+    if (!localStorage.theme) localStorage.theme = 'light'
+    setTheme(localStorage.theme)
 }
 
 // General
@@ -41,7 +39,7 @@ function toggleTheme() {
 
     // Find current theme
 
-    const theme = localStorage.getItem('theme')
+    const theme = localStorage.theme
 
     // If theme is light
 
@@ -61,8 +59,8 @@ function toggleTheme() {
 function setTheme(theme) {
 
     // Set recorded theme as theme, style body accordingly
-    
-    localStorage.setItem('theme', theme)
+
+    localStorage.theme = theme
 
     if (theme == 'dark') {
 
