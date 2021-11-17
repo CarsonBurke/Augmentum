@@ -5,6 +5,11 @@ function initEnv() {
     const homeUI = document.getElementById('home')
     homeUI.classList.add('hidden')
 
+    // Show menuButton
+
+    const menuButton = document.getElementById('menuButton')
+    menuButton.classList.remove('hidden')
+
     // Iterate based on gameCount
 
     let i = 0

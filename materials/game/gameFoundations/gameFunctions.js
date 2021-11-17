@@ -19,6 +19,8 @@ Game.prototype.init = function() {
     game.canvas.width = gameWidth
     game.canvas.height = gameHeight
 
+    game.canvas.style.margin = '20px'
+
     game.canvas.classList.add('canvas')
 
     // Create canvas manager by configuring canvas context

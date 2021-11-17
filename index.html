@@ -16,7 +16,10 @@
     <div class="uiParent">
         <div class="uiChild animate floatUp" id="home">
 
-            <h2 class="uiHeader gameHeader">Augmentum</h2>
+            <h2 class="uiHeader gameHeader">
+                <img src="materials/images/gameIcon.png" alt="Game icon" class="gameIcon">
+                Augmentum
+            </h2>
 
             <div class="uiContent">
 
@@ -51,6 +54,16 @@
             </div>
 
         </div>
+    </div>
+
+    <div class="gameUI">
+
+        <button class="menuButton hidden animate" id='menuButton' onclick="toggleUI('menuButton', 'home')">
+            <div class="menuDot"></div>
+            <div class="menuDot"></div>
+            <div class="menuDot"></div>
+        </button>
+
     </div>
 
     <!-- JS imports -->

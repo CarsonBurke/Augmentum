@@ -21,16 +21,28 @@ function wait(miliseconds) {
 
 function toggleUI(id1, id2) {
 
-    // Configure elements based on ids
+    // Show and hide using ids
 
-    const el1 = document.getElementById(id1)
-    const el2 = document.getElementById(id2)
-
-    //
-
-    el1.classList.add('hidden')
-    el2.classList.remove('hidden')
+    hideEl(id1)
+    showEl(id2)
 }
+
+function showEl(id) {
+
+    // Find el with id and show it
+
+    const el = document.getElementById(id)
+    el.classList.remove('hidden')
+}
+
+function hideEl(id) {
+
+    // Firn el with id and hide it
+
+    const el = document.getElementById(id)
+    el.classList.add('hidden')
+}
+
 
 
 // Theme functions

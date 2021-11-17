@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    overflow-y: hidden;
     scroll-behavior: smooth;
     background: var(--foreground1);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
     --lightPurple: rgb(174, 0, 255);
     --purple: rgb(123, 0, 224);
     --darkPurple: rgb(83, 0, 151);
@@ -24,19 +24,61 @@ body {
     --darkGreen: rgb(0, 184, 0);
 }
 
+body::-webkit-scrollbar {
+    width: 23px;
+}
+  
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background: var(--foreground2);
+    border-radius: 100px;
+    border-top: 6px solid var(--foreground1);
+    border-left: 6px solid var(--foreground1);
+    border-bottom: 6px solid var(--foreground1);
+    border-right: 6px solid var(--foreground1);
+    transition: all 0.3s;
+}
+
+/* Light Mode */
+
 .lightMode {
     color: black;
     --foreground1: white;
     --foreground2: whitesmoke;
     --foreground3: white;
+    --invert: black;
 }
+
+.lightMode::-webkit-scrollbar-thumb {
+    box-shadow: inset rgba(0, 0, 0, 0.2) 0 0 0 10000px;
+}
+
+.lightMode::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset rgba(0, 0, 0, 0.05) 0 0 0 10000px;
+}
+
+/* Dark Mode */
 
 .darkMode {
     color: white;
     --foreground1: rgb(29, 29, 29);
     --foreground2: rgb(45, 45, 45);
     --foreground3: rgb(55, 55, 55);
+    --invert: white;
 }
+
+.darkMode::-webkit-scrollbar-thumb {
+    box-shadow: inset rgba(255, 255, 255, 0.2) 0 0 0 10000px;
+}
+
+.darkMode::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset rgba(255, 255, 255, 0.05) 0 0 0 10000px;
+}
+
+/* Animations */
 
 @keyframes load {
     from {
@@ -52,7 +94,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-weight: initial;
-    font-family: "poppins", "sans-serif";
+    font-family: 'Comfortaa', 'sans-serif';
 }
 
 @font-face {
@@ -102,7 +144,7 @@ body {
     user-select: none;
     border: none;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     margin: auto;
     text-decoration: none;
     outline: 10px solid transparent;
@@ -160,7 +202,7 @@ body {
 /* UI */
 
 .uiParent {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -185,6 +227,10 @@ body {
     text-align: center;
     font-weight: 550;
     font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .uiContent {
@@ -198,9 +244,39 @@ body {
 /* Custom UI */
 
 .gameHeader {
-    font-size: 38px;
+    user-select: none;
+    font-size: 40px;
+    font-weight: bolder;
 }
 
+.gameIcon {
+    width: 70px;
+    height: 70px;
+    user-select: none;
+}
+
+/* Game UI */
+
+.menuButton {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: fixed;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    padding-top: 15px;
+}
+
+.menuDot {
+    width: 10px;
+    height: 10px;
+    background: var(--invert);
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.7) 0 0 4px 0;
+}
 
 /* Game */
 
