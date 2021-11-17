@@ -105,7 +105,7 @@ body {
     font-weight: 500;
     margin: auto;
     text-decoration: none;
-    outline: 2px solid transparent;
+    outline: 10px solid transparent;
 }
 
 .button:hover {
@@ -116,6 +116,8 @@ body {
     border-radius: 3px;
     filter: none;
     box-shadow: rgba(0, 0, 0, 0.4) 0 10px 35px 0;
+    outline-width: 3px;
+    outline-style: solid;
 }
 
 .greenButton {
@@ -123,7 +125,7 @@ body {
 }
 
 .greenButton:focus {
-    outline: 2px solid var(--lightGreen);
+    outline-color: var(--lightGreen);
 }
 
 .purpleButton {
@@ -131,7 +133,7 @@ body {
 }
 
 .purpleButton:focus {
-    outline: 2px solid var(--lightPurple);
+    outline-color: var(--lightPurple);
 }
 
 .blueButton {
@@ -139,7 +141,7 @@ body {
 }
 
 .blueButton:focus {
-    outline: 2px solid var(--lightBlue);
+    outline-color: var(--lightBlue);
 }
 
 .redButton {
@@ -147,7 +149,7 @@ body {
 }
 
 .redButton:focus {
-    outline: 2px solid var(--lightRed);
+    outline-color: var(--lightRed);
 }
 
 .hidden {
