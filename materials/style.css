@@ -109,13 +109,13 @@ body {
 }
 
 .button:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0 4px 12px 0, inset rgba(0, 0, 0, 0.2) 0 0 0 10000px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 4px 12px 0, inset rgba(0, 0, 0, 0.2) 0 0 0 10000px;
 }
 
 .button:focus {
     border-radius: 3px;
     filter: none;
-    box-shadow: rgba(0, 0, 0, 0.4) 0 3px 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 10px 35px 0;
 }
 
 .greenButton {
