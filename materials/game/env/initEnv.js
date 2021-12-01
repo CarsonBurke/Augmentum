@@ -10,17 +10,17 @@ function initEnv() {
     const menuButton = document.getElementById('menuButton')
     menuButton.classList.remove('hidden')
 
-    // Iterate based on gameCount
+    // Stop if there is already a game
 
-    let i = 0
-    while (i < gameCount) {
+    if (game) return
 
-        // Create a new game
+    //
 
-        const game = new Game()
-        game.init()
+    const playButton = document.getElementById('playButton')
+    playButton.innerHTML = '<span class="material-icons">play_arrow</span>Resume'
 
-        i++
-    }
+    // Create a new game and initialize it
 
+    game = new Game()
+    game.init()
 }

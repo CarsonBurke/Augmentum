@@ -8,8 +8,7 @@ const tickSpeed = 100
 
 //
 
-const gameCount = 1
-const playersPerGame = 1
+globalThis.game = undefined
 
 const gameWidth = 500
 const gameHeight = 500
