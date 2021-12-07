@@ -3,7 +3,7 @@
 window.addEventListener('load', init)
 
 function init() {
-
+    
     // Find theme and set as it. If not theme set to light
     if (!localStorage.theme) localStorage.theme = 'light'
     setTheme(localStorage.theme)

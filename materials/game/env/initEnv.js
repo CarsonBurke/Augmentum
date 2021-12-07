@@ -1,14 +1,7 @@
 function initEnv() {
 
-    // Hide home UI
-
-    const homeUI = document.getElementById('home')
-    homeUI.classList.add('hidden')
-
-    // Show menuButton
-
-    const menuButton = document.getElementById('menuButton')
-    menuButton.classList.remove('hidden')
+    hideEl('home')
+    showEl('menuButton')
 
     // Stop if there is already a game
 
