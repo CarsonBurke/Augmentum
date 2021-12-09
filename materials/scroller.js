@@ -91,7 +91,7 @@ function addStyles() {
 }
 
 window.addEventListener("load", animateItem)
-
+window.addEventListener("resize", animateItem)
 window.addEventListener("scroll", animateItem)
 
 //ANIMATIONS
