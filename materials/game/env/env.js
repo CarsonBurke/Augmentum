@@ -22,6 +22,8 @@ const structureTypes = {
         displayName: 'Extractor',
         description: 'Extracts oil from the ground',
         image: '',
+        width: 20,
+        height: 20,
         produces: {
             oil: 2,
         }
@@ -30,26 +32,46 @@ const structureTypes = {
         displayName: 'Mine',
         description: 'Mines coal and iron from the ground',
         image: '',
+        width: 20,
+        height: 20,
         produces: {
             oil: 2,
         }
     },
     apartment: {
-        produces: {
-            money: 2,
-        }
+        displayName: 'Apartment',
+        description: 'Provides housing for workers',
+        image: document.getElementById("apartment"),
+        width: 16,
+        height: 21,
+        housingCapacity: 10,
     },
     farm: {
+        displayName: 'Mine',
+        description: 'Mines coal and iron from the ground',
+        image: '',
+        width: 20,
+        height: 20,
         produces: {
             food: 6,
         }
     },
     well: {
+        displayName: 'Mine',
+        description: 'Mines coal and iron from the ground',
+        image: '',
+        width: 20,
+        height: 20,
         produces: {
             water: 2,
         }  
     },
     furnace: {
+        displayName: 'Mine',
+        description: 'Mines coal and iron from the ground',
+        image: '',
+        width: 20,
+        height: 20,
         consumes: {
             coal: 1,
         },
@@ -58,6 +80,11 @@ const structureTypes = {
         }
     },
     oilRefinery: {
+        displayName: 'Mine',
+        description: 'Mines coal and iron from the ground',
+        image: '',
+        width: 20,
+        height: 20,
         consumes: {
             water: 2,
             oil: 2,
@@ -67,6 +94,11 @@ const structureTypes = {
         }
     },
     thermalCracker: {
+        displayName: 'Mine',
+        description: 'Mines coal and iron from the ground',
+        image: '',
+        width: 20,
+        height: 20,
         consumes: {
             water: 2,
             oil: 2,

@@ -142,17 +142,20 @@ Game.prototype.placeStructure = function(event) {
     
     const type = game.selectedStructure
 
-    const left = event.clientX - game.canvas.getBoundingClientRect().left
+    const width = structureTypes[type].width
+    const height = structureTypes[type].height
 
-    if (left < 0) return
-    if (left > game.canvas.width) return
+    let left = event.clientX - game.canvas.getBoundingClientRect().left - width / 2
 
-    const top = event.clientY - game.canvas.getBoundingClientRect().top
+    left = Math.max(left, 0)
+    left = Math.min(left, game.canvas.width - width)
 
-    if (top < 0) return
-    if (top > game.canvas.height) return
+    let top = event.clientY - game.canvas.getBoundingClientRect().top - height / 2
 
-    const image = document.getElementById('apartment')
+    top = Math.max(top, 0)
+    top = Math.min(top, game.canvas.height - height)
+    
+    const image = structureTypes[type].image
 
     const structure = new Structure(type, left, top, 16, 21, image)
 
