@@ -5,6 +5,10 @@ class Game {
 
         game.buildMode
         game.paused
+
+        game.objects = {
+
+        }
     }
 }
 
@@ -127,6 +131,10 @@ Game.prototype.enterBuildMode = function() {
     console.log('enteredBuildMode')
 
     document.addEventListener('click', game.placeStructure)
+
+    document.addEventListener('mousemove', game.followCursor)
+
+    if(!game.buildPreview) game.buildPreview = new Structure('apartment', 0, 0, 0, 0, structureTypes['apartment'].transparentImage)
 }
 
 Game.prototype.exitBuildMode = function() {
@@ -137,6 +145,33 @@ Game.prototype.exitBuildMode = function() {
 
     document.removeEventListener('click', game.placeStructure)
 }
+
+Game.prototype.followCursor = function(event) {
+
+    const type = game.selectedStructure
+    
+    const image = structureTypes[type].transparentImage
+    
+    game.buildPreview.image = image
+
+    const width = structureTypes[type].width
+    const height = structureTypes[type].height
+
+    game.buildPreview.width = width
+    game.buildPreview.height = height
+
+    let left = event.clientX - game.canvas.getBoundingClientRect().left - width / 2
+
+    left = Math.max(left, 0)
+    left = Math.min(left, game.canvas.width - width)
+
+    let top = event.clientY - game.canvas.getBoundingClientRect().top - height / 2
+
+    top = Math.max(top, 0)
+    top = Math.min(top, game.canvas.height - height)
+
+    game.buildPreview.move(left, top)
+}   
 
 Game.prototype.placeStructure = function(event) {
     
@@ -158,6 +193,4 @@ Game.prototype.placeStructure = function(event) {
     const image = structureTypes[type].image
 
     const structure = new Structure(type, left, top, 16, 21, image)
-
-    structure.draw()
 }

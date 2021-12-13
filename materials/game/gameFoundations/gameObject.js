@@ -1,8 +1,9 @@
 class GameObject {
-    constructor(left, top, width, height, image) {
+    constructor(type, left, top, width, height, image) {
 
         const gameObj = this
 
+        gameObj.type = type
         gameObj.left = left
         gameObj.top = top
         gameObj.right = gameObj.left + gameObj.width
@@ -14,6 +15,9 @@ class GameObject {
         gameObj.image = image
 
         gameObj.id = newID()
+
+        if (!game.objects[type]) game.objects[type] = {}
+        game.objects[type][gameObj.id] = gameObj
     }
 }
 

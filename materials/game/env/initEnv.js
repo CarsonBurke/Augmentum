@@ -16,4 +16,8 @@ function initEnv() {
 
     game = new Game()
     game.init()
+
+    //
+
+    runEnv()
 }
