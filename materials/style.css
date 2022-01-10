@@ -278,6 +278,18 @@ body::-webkit-scrollbar-thumb {
     box-shadow: rgba(0, 0, 0, 0.7) 0 0 4px 0;
 }
 
+.resourcesParent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    background: var(--foreground2);
+}
+
 /* Game */
 
 .canvas {

@@ -141,7 +141,9 @@ Game.prototype.enterBuildMode = function() {
 
     console.log('enteredBuildMode')
 
-    document.addEventListener('click', game.players.person.placeStructure)
+    document.addEventListener('click', function(event) {
+        game.players.person.placeStructure(event, 'person')
+    })
 
     document.addEventListener('mousemove', game.followCursor)
 

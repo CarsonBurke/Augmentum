@@ -1,11 +1,11 @@
 class Structure extends GameObject {
-    constructor(type, left, top, width, height, image, owner) {
+    constructor(type, left, top, width, height, image, ownerType) {
 
         super(type, left, top, width, height, image)
 
         const structure = this
-
-        structure.owner = owner
+        console.log(ownerType)
+        structure.ownerType = ownerType
     }
 }
 
@@ -26,7 +26,7 @@ Structure.prototype.generateIncome = function() {
     for (const resourceName in structureInfo.produces) {
 
         // Add the resource amount to the player's resources
-
-        structure.owner.resources[resourceName] += structureInfo.produces[resourceName]
+            console.log(game.players[structure.ownerType])
+        game.players[structure.ownerType].resources[resourceName] += structureInfo.produces[resourceName]
     }
 }

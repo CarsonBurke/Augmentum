@@ -1,6 +1,6 @@
 function runEnv() {
 
-    /* setInterval(updateGame, 1000) */
+    setInterval(updateGame, 1000)
 
     function updateGame() {
 
@@ -33,6 +33,10 @@ function runEnv() {
                 structure.generateIncome()
             }
         }
+
+        const resourcesParent = document.getElementById('resourcesParent')
+
+        resourcesParent.innerText = game.players.person.resources.money
     }
 
     setInterval(updateSprites, 1)

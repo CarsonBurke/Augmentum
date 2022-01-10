@@ -2,7 +2,7 @@ class Player {
     constructor(type) {
 
         const player = this
-
+        
         player.type = type
         game.players[player.type] = player
 
@@ -16,7 +16,7 @@ class Player {
 }
 
 Player.prototype.placeStructure = function(event) {
-
+    
     const player = this
     
     const type = game.selectedStructureType
@@ -36,5 +36,5 @@ Player.prototype.placeStructure = function(event) {
     
     const image = structureTypes[type].image
     
-    const structure = new Structure(type, left, top, 16, 21, image, player)
+    new Structure(type, left, top, 16, 21, image, player.type)
 }

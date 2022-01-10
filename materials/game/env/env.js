@@ -46,6 +46,9 @@ const structureTypes = {
         width: 16,
         height: 21,
         housingCapacity: 10,
+        produces: {
+            money: 5,
+        }
     },
     farm: {
         displayName: 'Mine',
