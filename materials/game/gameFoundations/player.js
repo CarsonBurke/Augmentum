@@ -10,10 +10,7 @@ class Player {
 
         for (const resourceName in resources) {
 
-            player.resources[resourceName] = {
-                amount: 0,
-                income: 0,
-            }
+            player.resources[resourceName] = 0
         }
     }
 }
@@ -22,7 +19,7 @@ Player.prototype.placeStructure = function(event) {
 
     const player = this
     
-    const type = game.selectedStructure
+    const type = game.selectedStructureType
 
     const width = structureTypes[type].width
     const height = structureTypes[type].height
@@ -38,6 +35,6 @@ Player.prototype.placeStructure = function(event) {
     top = Math.min(top, game.canvas.height - height)
     
     const image = structureTypes[type].image
-
-    const structure = new Structure(type, left, top, 16, 21, image)
+    
+    const structure = new Structure(type, left, top, 16, 21, image, player)
 }

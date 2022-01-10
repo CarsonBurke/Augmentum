@@ -1,8 +1,38 @@
 function runEnv() {
 
+    /* setInterval(updateGame, 1000) */
+
     function updateGame() {
 
+        // Stop if the game is paused
 
+        if (game.paused) return
+
+        // Loop through types in game objects
+
+        for (const type in game.objects) {
+
+            // Iterate if the type isn't a structure type
+
+            if (!structureTypes[type]) continue
+
+            // Otherwise loop through IDs of the object
+
+            for (const ID in game.objects[type]) {
+
+                // Define the structure using the ID
+
+                const structure = game.objects[type][ID]
+
+                // Iterate if there is no owner
+
+                if (!structure.owner) continue
+                
+                // Have the strucutre generate resources
+
+                structure.generateIncome()
+            }
+        }
     }
 
     setInterval(updateSprites, 1)

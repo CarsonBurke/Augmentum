@@ -50,6 +50,10 @@ Game.prototype.init = function() {
 
     game.cm.imageSmoothingEnabled = false
 
+    // Create a build preview
+
+    game.buildPreview = new Structure('buildPreview', 0, 0, 0, 0, structureTypes['apartment'].transparentImage)
+
     //
 
     document.addEventListener('keydown', game.useHotkeys)
@@ -133,15 +137,15 @@ Game.prototype.enterBuildMode = function() {
 
     game.buildMode = true
 
-    game.selectedStructure = 'apartment'
+    game.selectedStructureType = 'apartment'
 
     console.log('enteredBuildMode')
 
-    document.addEventListener('click', game.placeStructure)
+    document.addEventListener('click', game.players.person.placeStructure)
 
     document.addEventListener('mousemove', game.followCursor)
 
-    if(!game.buildPreview) game.buildPreview = new Structure('apartment', 0, 0, 0, 0, structureTypes['apartment'].transparentImage)
+    game.buildPreview.type = game.selectedStructureType
 }
 
 Game.prototype.exitBuildMode = function() {
@@ -150,12 +154,17 @@ Game.prototype.exitBuildMode = function() {
 
     console.log('exitedBuildMode')
 
-    document.removeEventListener('click', game.placeStructure)
+    document.removeEventListener('click', game.players.person.placeStructure)
+
+    document.removeEventListener('mousemove', game.followCursor)
+
+    game.buildPreview.width = 0
+    game.buildPreview.height = 0
 }
 
 Game.prototype.followCursor = function(event) {
 
-    const type = game.selectedStructure
+    const type = game.selectedStructureType
     
     const image = structureTypes[type].transparentImage
     
