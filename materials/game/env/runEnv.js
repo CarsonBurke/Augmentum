@@ -13,7 +13,7 @@ function runEnv() {
         for (const type in game.objects) {
 
             // Iterate if the type isn't a structure type
-
+            
             if (!structureTypes[type]) continue
 
             // Otherwise loop through IDs of the object
@@ -23,10 +23,10 @@ function runEnv() {
                 // Define the structure using the ID
 
                 const structure = game.objects[type][ID]
-
+                
                 // Iterate if there is no owner
 
-                if (!structure.owner) continue
+                if (!structure.ownerType) continue
                 
                 // Have the strucutre generate resources
 
