@@ -290,6 +290,12 @@ body::-webkit-scrollbar-thumb {
     background: var(--foreground2);
 }
 
+.resourcesChild {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Game */
 
 .canvas {

@@ -36,6 +36,16 @@ function runEnv() {
 
         const resourcesParent = document.getElementById('resourcesParent')
 
+        for (const resourceName in game.players.person.resources) {
+
+            resourcesParent.innerHTML = `
+                <div class="resourcesChild">
+                    <img src=materials/"` + resourceName + `" alt="" class="resourceIcon">
+                    <h3 class="resourceTitle">` + resourceName + `</h3>
+                    <p class="` + resourceName +`Amount">` + game.players.person.resources[resourceName] +`</p>
+                </div>`
+        }
+
         resourcesParent.innerText = game.players.person.resources.money
     }
 
