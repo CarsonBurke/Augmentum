@@ -141,6 +141,8 @@ Game.prototype.enterBuildMode = function() {
 
     console.log('enteredBuildMode')
 
+    document.body.style.cursor = 'pointer'
+
     document.addEventListener('click', function(event) {
         game.players.person.placeStructure(event, 'person')
     })
@@ -155,6 +157,8 @@ Game.prototype.exitBuildMode = function() {
     game.buildMode = false
 
     console.log('exitedBuildMode')
+
+    document.body.style.cursor = 'default'
 
     document.removeEventListener('click', game.players.person.placeStructure)
 
