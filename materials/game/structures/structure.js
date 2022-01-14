@@ -26,7 +26,7 @@ Structure.prototype.generateIncome = function() {
     for (const resourceName in structureInfo.produces) {
         
         // Add the resource amount to the player's resources
-            console.log(game.players[structure.ownerType].resources[resourceName])
+
         game.players[structure.ownerType].resources[resourceName] += structureInfo.produces[resourceName]
     }
 }
