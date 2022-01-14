@@ -149,6 +149,22 @@ Game.prototype.enterBuildMode = function() {
 
     document.addEventListener('mousemove', game.followCursor)
 
+    const structuresParent = document.getElementById('structuresParent')
+
+    structuresParent.innerHTML = ``
+
+    for (const structureType in structureTypes) {
+
+        const structureInfo = structureTypes[structureType]
+
+        structuresParent.innerHTML += `
+        <div class='structureChild'>
+            <img src="materials/images/` + structureType + `.png" alt="" class="resourceIcon">
+            <h3 class="resourceTitle">` + structureType + `</h3>
+        </div>
+        `
+    }
+
     game.buildPreview.type = game.selectedStructureType
 }
 
@@ -166,6 +182,8 @@ Game.prototype.exitBuildMode = function() {
 
     game.buildPreview.width = 0
     game.buildPreview.height = 0
+
+    structuresParent.innerHTML = ``
 }
 
 Game.prototype.followCursor = function(event) {

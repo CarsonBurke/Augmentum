@@ -282,18 +282,54 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 50px;
-    height: 50px;
     position: fixed;
     left: 15px;
     top: 15px;
+    padding: 10px;
     background: var(--foreground2);
+    box-shadow: rgba(0, 0, 0, 0.3) 0 4px 20px 0;
 }
 
 .resourcesChild {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 5px;
+}
+
+.resourceTitle {
+    text-transform: capitalize;
+}
+
+.resourceIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.structuresParent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    padding: 10px;
+    background: var(--foreground2);
+    box-shadow: rgba(0, 0, 0, 0.3) 0 4px 20px 0;
+}
+
+.structuresChild {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.structureTitle {
+    text-transform: capitalize;
+}
+
+.structureIcon {
+    width: 40px;
+    height: 40px;
 }
 
 /* Game */

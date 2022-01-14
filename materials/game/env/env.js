@@ -26,6 +26,9 @@ const structureTypes = {
         height: 20,
         produces: {
             oil: 2,
+        },
+        cost: {
+            money: 1000,
         }
     },
     mine: {
@@ -36,6 +39,9 @@ const structureTypes = {
         height: 20,
         produces: {
             oil: 2,
+        },
+        cost: {
+            money: 1000,
         }
     },
     apartment: {
@@ -48,6 +54,9 @@ const structureTypes = {
         housingCapacity: 10,
         produces: {
             money: 5,
+        },
+        cost: {
+            money: 1000,
         }
     },
     farm: {
@@ -58,6 +67,9 @@ const structureTypes = {
         height: 20,
         produces: {
             food: 6,
+        },
+        cost: {
+            money: 1000,
         }
     },
     well: {
@@ -68,7 +80,10 @@ const structureTypes = {
         height: 20,
         produces: {
             water: 2,
-        }  
+        },
+        cost: {
+            money: 1000,
+        }
     },
     furnace: {
         displayName: 'Mine',
@@ -81,6 +96,9 @@ const structureTypes = {
         },
         produces: {
             coke: 1,
+        },
+        cost: {
+            money: 1000,
         }
     },
     oilRefinery: {
@@ -95,6 +113,9 @@ const structureTypes = {
         },
         produces: {
             gasoline: 6,
+        },
+        cost: {
+            money: 1000,
         }
     },
     thermalCracker: {
@@ -109,6 +130,9 @@ const structureTypes = {
         },
         produces: {
             coke: 3,
+        },
+        cost: {
+            money: 1000,
         }
     }
 }
@@ -116,15 +140,14 @@ const structureTypes = {
 // resources
 
 const resources = [
-    'oil',
-    'coal',
-    'coke',
-    'iron',
-    'steel',
-    'gears',
-    'components',
-    'gasoline',
+    'money',
     'food',
     'water',
-    'money',
+    'oil',
+    'coal',
+    'iron',
+    'gasoline',
+    'coke',
+    'steel',
+    'components',
 ]

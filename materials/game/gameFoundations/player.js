@@ -12,14 +12,30 @@ class Player {
             
             player.resources[resourceName] = 0
         }
+
+        player.resources.money = 10000
     }
+}
+
+Player.prototype.purchase = function(costObj) {
+
+    const player = this
+
+    for (const resourcType in costObj) {
+
+        if (player.resources[resourcType] < costObj) return false
+    }
+
+    return true
 }
 
 Player.prototype.placeStructure = function(event, playerType) {
     
-    const player = this
+    const player = game.players[playerType]
     
     const type = game.selectedStructureType
+    
+    if (!player.purchase(type.cost)) return false
     
     const width = structureTypes[type].width
     const height = structureTypes[type].height
