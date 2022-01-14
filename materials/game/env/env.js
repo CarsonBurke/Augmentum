@@ -48,7 +48,6 @@ const structureTypes = {
         displayName: 'Apartment',
         description: 'Provides housing for workers',
         image: document.getElementById("apartment"),
-        transparentImage: document.getElementById('transparentApartment'),
         width: 16,
         height: 21,
         housingCapacity: 10,

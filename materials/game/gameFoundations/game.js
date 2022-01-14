@@ -52,7 +52,7 @@ Game.prototype.init = function() {
 
     // Create a build preview
 
-    game.buildPreview = new Structure('buildPreview', 0, 0, 0, 0, structureTypes['apartment'].transparentImage)
+    game.buildPreview = new Structure('buildPreview', 0, 0, 0, 0, document.getElementById('apartmentTransparent'))
 
     //
 
@@ -76,6 +76,11 @@ Game.prototype.useHotkeys = function(event) {
     if (key == "Enter") {
 
         if (game.paused) game.unPause()
+        return
+    }
+    if (key == 'f') {
+
+        game.selectedStructureType = 'farm'
         return
     }
 }
@@ -190,7 +195,7 @@ Game.prototype.followCursor = function(event) {
 
     const type = game.selectedStructureType
     
-    const image = structureTypes[type].transparentImage
+    const image = document.getElementById(type + 'Transparent')
     
     game.buildPreview.image = image
 
