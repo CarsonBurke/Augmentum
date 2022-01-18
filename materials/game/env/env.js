@@ -21,7 +21,6 @@ const structureTypes = {
     extractor: {
         displayName: 'Extractor',
         description: 'Extracts oil from the ground',
-        image: '',
         width: 20,
         height: 20,
         produces: {
@@ -34,7 +33,6 @@ const structureTypes = {
     mine: {
         displayName: 'Mine',
         description: 'Mines coal and iron from the ground',
-        image: '',
         width: 20,
         height: 20,
         produces: {
@@ -60,7 +58,6 @@ const structureTypes = {
     farm: {
         displayName: 'Mine',
         description: 'Mines coal and iron from the ground',
-        image: '',
         width: 20,
         height: 20,
         produces: {
@@ -73,7 +70,6 @@ const structureTypes = {
     well: {
         displayName: 'Mine',
         description: 'Mines coal and iron from the ground',
-        image: '',
         width: 20,
         height: 20,
         produces: {
@@ -86,7 +82,6 @@ const structureTypes = {
     furnace: {
         displayName: 'Mine',
         description: 'Mines coal and iron from the ground',
-        image: '',
         width: 20,
         height: 20,
         consumes: {
@@ -101,7 +96,6 @@ const structureTypes = {
     },
     oilRefinery: {
         description: 'Mines coal and iron from the ground',
-        image: '',
         width: 20,
         height: 20,
         consumes: {
@@ -117,7 +111,6 @@ const structureTypes = {
     },
     thermalCracker: {
         description: 'Mines coal and iron from the ground',
-        image: '',
         width: 20,
         height: 20,
         consumes: {
@@ -130,7 +123,35 @@ const structureTypes = {
         cost: {
             money: 1000,
         }
-    }
+    },
+    munitionsFactory: {
+        description: 'Mines coal and iron from the ground',
+        width: 20,
+        height: 20,
+        consumes: {
+            steel: 2,
+        },
+        produces: {
+            ammunition: 3,
+        },
+        cost: {
+            money: 1000,
+        }
+    },
+    autoCannon: {
+        description: 'Mines coal and iron from the ground',
+        width: 20,
+        height: 20,
+        consumes: {
+            ammunition: 1,
+        },
+        produces: {
+            coke: 3,
+        },
+        cost: {
+            money: 1000,
+        }
+    },
 }
 
 // resources
@@ -146,4 +167,5 @@ const resources = [
     'coke',
     'steel',
     'components',
+    'ammunition',
 ]
