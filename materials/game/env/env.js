@@ -47,7 +47,6 @@ const structureTypes = {
     apartment: {
         displayName: 'Apartment',
         description: 'Provides housing for workers',
-        image: document.getElementById("apartment"),
         width: 16,
         height: 21,
         housingCapacity: 10,
@@ -101,7 +100,6 @@ const structureTypes = {
         }
     },
     oilRefinery: {
-        displayName: 'Mine',
         description: 'Mines coal and iron from the ground',
         image: '',
         width: 20,
@@ -118,7 +116,6 @@ const structureTypes = {
         }
     },
     thermalCracker: {
-        displayName: 'Mine',
         description: 'Mines coal and iron from the ground',
         image: '',
         width: 20,

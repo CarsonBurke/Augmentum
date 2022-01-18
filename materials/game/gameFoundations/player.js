@@ -37,6 +37,12 @@ Player.prototype.purchase = function(costObj) {
 Player.prototype.placeStructure = function(event, playerType) {
     
     const player = game.players[playerType]
+
+    //
+
+    if (player.type == 'person' && !game.buildMode) return false
+
+    //
     
     const type = game.selectedStructureType
     
@@ -55,7 +61,7 @@ Player.prototype.placeStructure = function(event, playerType) {
     top = Math.max(top, 0)
     top = Math.min(top, game.canvas.height - height)
     
-    const image = structureTypes[type].image
+    const image = document.getElementById(type)
     
     new Structure(type, left, top, 16, 21, image, playerType)
 }

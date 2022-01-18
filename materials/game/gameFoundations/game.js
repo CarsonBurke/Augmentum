@@ -62,9 +62,9 @@ Game.prototype.init = function() {
 Game.prototype.useHotkeys = function(event) {
 
     const key = event.key
-
+    
     if (key == 'b') {
-
+        
         game.toggleBuildMode()
         return
     }
@@ -160,8 +160,6 @@ Game.prototype.enterBuildMode = function() {
 
     for (const structureType in structureTypes) {
 
-        const structureInfo = structureTypes[structureType]
-
         structuresParent.innerHTML += `
         <div class='structureChild'>
             <img src="materials/images/` + structureType + `.png" alt="" class="resourceIcon">
@@ -180,8 +178,6 @@ Game.prototype.exitBuildMode = function() {
     console.log('exitedBuildMode')
 
     document.body.style.cursor = 'default'
-
-    document.removeEventListener('click', game.players.person.placeStructure)
 
     document.removeEventListener('mousemove', game.followCursor)
 

@@ -285,15 +285,15 @@ body::-webkit-scrollbar-thumb {
     position: fixed;
     left: 15px;
     top: 15px;
-    padding: 10px;
     background: var(--foreground2);
     box-shadow: rgba(0, 0, 0, 0.3) 0 4px 20px 0;
 }
 
-.resourcesChild {
+.resourceChild {
     display: flex;
     align-items: center;
     gap: 5px;
+    padding: 10px;
 }
 
 .resourceTitle {
@@ -312,14 +312,14 @@ body::-webkit-scrollbar-thumb {
     position: fixed;
     left: 15px;
     top: 15px;
-    padding: 10px;
     background: var(--foreground2);
     box-shadow: rgba(0, 0, 0, 0.3) 0 4px 20px 0;
 }
 
-.structuresChild {
+.structureChild {
     display: flex;
     align-items: center;
+    padding: 10px;
     gap: 5px;
 }
 
