@@ -145,9 +145,6 @@ const structureTypes = {
         consumes: {
             ammunition: 1,
         },
-        produces: {
-            coke: 3,
-        },
         cost: {
             money: 1000,
         }

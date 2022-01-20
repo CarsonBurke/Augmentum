@@ -216,5 +216,6 @@ Game.prototype.followCursor = function(event) {
     top = Math.max(top, 0)
     top = Math.min(top, game.canvas.height - height)
 
-    game.buildPreview.move(left, top)
+    game.buildPreview.left = left
+    game.buildPreview.top = top
 }

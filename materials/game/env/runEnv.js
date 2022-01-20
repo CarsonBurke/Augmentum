@@ -1,6 +1,6 @@
 function runEnv() {
 
-    setInterval(updateGame, 1000)
+    setInterval(updateGame, 10)
 
     function updateGame() {
 
@@ -33,6 +33,25 @@ function runEnv() {
                 structure.generateIncome()
             }
         }
+
+        //
+
+        const environmentalists = Object.values(game.objects.environmentalist)
+
+        for (const ID in game.objects.autoCannon) {
+
+            const autoCannon = game.objects.autoCannon[ID]
+            
+            const targetEnvironmentalist = environmentalists.filter(environmentalist => findDistance(environmentalist.left, environmentalist.top, autoCannon.left, autoCannon.top) < 100)[0]
+            console.log(targetEnvironmentalist)
+            if (!targetEnvironmentalist) continue
+
+            targetEnvironmentalist.health -= 0.1
+            
+            if (targetEnvironmentalist.health <= 0) targetEnvironmentalist.delete()
+        }
+
+        //
 
         const resourcesParent = document.getElementById('resourcesParent')
 

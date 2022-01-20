@@ -28,10 +28,9 @@ GameObject.prototype.draw = function() {
     game.cm.drawImage(gameObject.image, gameObject.left, gameObject.top, gameObject.width, gameObject.height)
 }
 
-GameObject.prototype.move = function(left, top) {
+GameObject.prototype.delete = function() {
 
     const gameObject = this
 
-    gameObject.left = left
-    gameObject.top = top
+    delete game.objects[gameObject.type][gameObject.id]
 }
