@@ -53,7 +53,7 @@ Game.prototype.init = function() {
     // Create a build preview
 
     game.buildPreview = new Structure('buildPreview', 0, 0, 0, 0, document.getElementById('apartmentTransparent'))
-
+    new Environmentalist(20, 20)
     //
 
     document.addEventListener('keydown', game.useHotkeys)
