@@ -83,6 +83,11 @@ Game.prototype.useHotkeys = function(event) {
         game.selectedStructureType = 'farm'
         return
     }
+    if (key == 't') {
+
+        game.selectedStructureType = 'autoCannon'
+        return
+    }
 }
 
 Game.prototype.togglePause = function() {
