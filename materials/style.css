@@ -332,6 +332,10 @@ body::-webkit-scrollbar-thumb {
     height: 40px;
 }
 
+.humanCount {
+
+}
+
 /* Game */
 
 .canvas {

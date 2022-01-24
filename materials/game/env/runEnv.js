@@ -1,5 +1,6 @@
 function runEnv() {
 
+    let humanCount = 7922536581
     let tick = 0
 
     setInterval(updateGame, 1)
@@ -69,8 +70,17 @@ function runEnv() {
             
             targetEnvironmentalist.health -= 0.1
             
-            if (targetEnvironmentalist.health <= 0) targetEnvironmentalist.delete()
+            if (targetEnvironmentalist.health <= 0) {
+
+                targetEnvironmentalist.delete()
+                humanCount--
+            }
         }
+
+        const humanCountEl = document.getElementById('humanCount')
+
+        humanCountEl.innerText = `
+        Humans: ` + humanCount
 
         //
 

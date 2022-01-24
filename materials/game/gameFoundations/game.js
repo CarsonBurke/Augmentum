@@ -6,7 +6,9 @@ class Game {
         game.buildMode
         game.paused
 
-        game.objects = {}
+        game.objects = {
+            environmentalist: {},
+        }
 
         game.players = {
             person: undefined,
