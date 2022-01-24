@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div class="gameUI">
+    <div class="gameUI hidden animate" id="gameUI" onclick="toggleUI('gameUI', 'home')">
 
         <div class="resourcesParent" id="resourcesParent">
             
@@ -68,9 +68,11 @@
         </div>
 
 
-        <div class="humanCount" id="humanCount">Humans: 0</div>
+        <div class="humanCount" id="humanCount">
+            <span class="material-icons">people</span>
+            Humans: 0</div>
 
-        <button class="menuButton hidden animate" id='menuButton' onclick="toggleUI('menuButton', 'home')">
+        <button class="menuButton" id='menuButton'>
             <div class="menuDot"></div>
             <div class="menuDot"></div>
             <div class="menuDot"></div>

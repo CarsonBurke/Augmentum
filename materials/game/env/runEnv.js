@@ -54,7 +54,24 @@ function runEnv() {
 
         //
 
-        const environmentalists = Object.values(game.objects.environmentalist)
+        const environmentalists = []
+
+        for (const ID in game.objects.environmentalist) {
+
+            const environmentalist = game.objects.environmentalist[ID]
+    
+            environmentalists.push(environmentalist)
+            
+            const targetAutoCannon = Object.values(game.objects.autoCannon).sort((a, b) => findDistance(environmentalist.left, environmentalist.top, a.left, a.top) - findDistance(environmentalist.left, environmentalist.top, b.left, b.top)).reverse()[0]
+        
+            if (!targetAutoCannon) continue
+
+            if (targetAutoCannon.top > environmentalist.top) environmentalist.top += environmentalist.moveSpeed
+            else environmentalist.top -= environmentalist.moveSpeed
+
+            if (targetAutoCannon.left > environmentalist.left) environmentalist.left += environmentalist.moveSpeed
+            else environmentalist.left -= environmentalist.moveSpeed
+        }
 
         for (const ID in game.objects.autoCannon) {
 
@@ -68,7 +85,7 @@ function runEnv() {
 
             autoCannon.angle = Math.atan2((targetEnvironmentalist.top - autoCannon.top), (targetEnvironmentalist.left - autoCannon.left))
             
-            targetEnvironmentalist.health -= 0.1
+            targetEnvironmentalist.health -= 0.03
             
             if (targetEnvironmentalist.health <= 0) {
 
@@ -79,8 +96,7 @@ function runEnv() {
 
         const humanCountEl = document.getElementById('humanCount')
 
-        humanCountEl.innerText = `
-        Humans: ` + humanCount
+        humanCountEl.innerText = `Humans: ` + humanCount
 
         //
 

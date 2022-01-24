@@ -9,5 +9,7 @@ class Environmentalist extends GameObject {
         const environmentalist = this
 
         environmentalist.health = 10
+
+        environmentalist.moveSpeed = 1
     }
 }

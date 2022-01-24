@@ -8,6 +8,7 @@ class Game {
 
         game.objects = {
             environmentalist: {},
+            autoCannon: {},
         }
 
         game.players = {

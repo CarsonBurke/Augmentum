@@ -1,7 +1,7 @@
 function initEnv() {
 
     hideEl('home')
-    showEl('menuButton')
+    showEl('gameUI')
 
     // Stop if there is already a game
 

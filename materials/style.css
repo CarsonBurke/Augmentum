@@ -333,7 +333,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .humanCount {
-
+    position: absolute;
+    top: 0;
+    padding: 10px;
 }
 
 /* Game */
