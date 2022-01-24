@@ -1,8 +1,12 @@
 function runEnv() {
 
-    setInterval(updateGame, 10)
+    let tick = 0
+
+    setInterval(updateGame, 1)
 
     function updateGame() {
+
+        tick++
 
         // Stop if the game is paused
 
@@ -34,6 +38,19 @@ function runEnv() {
             }
         }
 
+        if (tick % 100 == 0) {
+
+            const environmentalistSpawnAmount = Math.floor(Math.random() * tick / 1000)
+
+            let newEnvironmentalists = 0
+    
+            while (newEnvironmentalists < environmentalistSpawnAmount) {
+    
+                new Environmentalist(Math.random() * gameWidth, Math.random() * gameHeight)
+                newEnvironmentalists++
+            }
+        }
+
         //
 
         const environmentalists = Object.values(game.objects.environmentalist)
@@ -41,11 +58,15 @@ function runEnv() {
         for (const ID in game.objects.autoCannon) {
 
             const autoCannon = game.objects.autoCannon[ID]
+
+            autoCannon.angle = -90 * Math.PI / 180
             
             const targetEnvironmentalist = environmentalists.filter(environmentalist => findDistance(environmentalist.left, environmentalist.top, autoCannon.left, autoCannon.top) < 100)[0]
-            console.log(targetEnvironmentalist)
+
             if (!targetEnvironmentalist) continue
 
+            autoCannon.angle = Math.atan2((targetEnvironmentalist.top - autoCannon.top), (targetEnvironmentalist.left - autoCannon.left))
+            
             targetEnvironmentalist.health -= 0.1
             
             if (targetEnvironmentalist.health <= 0) targetEnvironmentalist.delete()
@@ -93,6 +114,8 @@ function runEnv() {
                 const object = game.objects[type][ID]
 
                 object.draw()
+
+                if (object.type == 'autoCannon') object.rotate()
             }
         }
     }
