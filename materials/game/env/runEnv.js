@@ -77,7 +77,7 @@ function runEnv() {
 
             const autoCannon = game.objects.autoCannon[ID]
 
-            autoCannon.angle = -90 * Math.PI / 180
+            if (!autoCannon.angle) autoCannon.angle = -90 * Math.PI / 180
             
             const targetEnvironmentalist = environmentalists.filter(environmentalist => findDistance(environmentalist.left, environmentalist.top, autoCannon.left, autoCannon.top) < 100)[0]
 
