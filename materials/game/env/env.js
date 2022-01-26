@@ -152,6 +152,7 @@ const structureTypes = {
         width: 20,
         height: 20,
         health: 40,
+        range: 160,
         consumes: {
             ammunition: 1,
         },

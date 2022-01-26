@@ -39,7 +39,7 @@ function runEnv() {
             }
         }
 
-        if (tick % 100 == 0) {
+        if (tick % 300 == 0) {
 
             const environmentalistSpawnAmount = Math.floor(Math.random() * tick / 1000)
 
@@ -127,7 +127,7 @@ function runEnv() {
 
             if (!autoCannon.angle) autoCannon.angle = -90 * Math.PI / 180
             
-            const targetEnvironmentalist = environmentalists.filter(environmentalist => findDistance(environmentalist.left, environmentalist.top, autoCannon.left, autoCannon.top) < 100)[0]
+            const targetEnvironmentalist = environmentalists.filter(environmentalist => findDistance(environmentalist.left, environmentalist.top, autoCannon.left, autoCannon.top) < structureTypes.autoCannon.range)[0]
 
             if (!targetEnvironmentalist) continue
 
