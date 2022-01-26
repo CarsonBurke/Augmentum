@@ -161,6 +161,15 @@ const structureTypes = {
     },
 }
 
+// Units
+
+const unitTypes = {
+    environmentalist: {
+        width: 20,
+        height: 27,
+    }
+}
+
 // resources
 
 const resources = [

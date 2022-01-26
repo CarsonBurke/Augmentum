@@ -46,9 +46,49 @@ function runEnv() {
             let newEnvironmentalists = 0
     
             while (newEnvironmentalists < environmentalistSpawnAmount) {
-    
-                new Environmentalist(Math.random() * gameWidth, Math.random() * gameHeight)
-                newEnvironmentalists++
+
+                const spawnLocation = Math.random() * 4
+
+                if (spawnLocation < 1) {
+
+                    const top = 0
+                    const left = Math.random() * gameWidth - unitTypes.environmentalist.width
+
+                    new Environmentalist(left, top)
+                    newEnvironmentalists++
+
+                    continue
+                }
+                if (spawnLocation < 2) {
+
+                    const top = Math.random() * gameHeight
+                    const left = gameWidth - unitTypes.environmentalist.width
+
+                    new Environmentalist(left, top)
+                    newEnvironmentalists++
+                    
+                    continue
+                }
+                if (spawnLocation < 3) {
+
+                    const top = gameHeight - unitTypes.environmentalist.height
+                    const left = Math.random() * gameWidth
+
+                    new Environmentalist(left, top)
+                    newEnvironmentalists++
+                    
+                    continue
+                }
+                if (spawnLocation < 4) {
+
+                    const top = Math.random() * gameHeight - unitTypes.environmentalist.height
+                    const left = 0
+
+                    new Environmentalist(left, top)
+                    newEnvironmentalists++
+                    
+                    continue
+                }
             }
         }
 
@@ -77,7 +117,7 @@ function runEnv() {
                 continue
             }
 
-            targetAutoCannon.health -= 0.05
+            targetAutoCannon.health -= 0.04
             if (targetAutoCannon.health <= 0) targetAutoCannon.delete()
         }
 
