@@ -114,7 +114,7 @@ Game.prototype.togglePause = function() {
 
 Game.prototype.pause = function() {
 
-    toggleUI('menuButton', 'home')
+    toggleUI('gameUI', 'home')
 
     game.paused = true
 }
@@ -123,7 +123,7 @@ Game.prototype.unPause = function() {
 
     hideEl('home')
     hideEl('settings')
-    showEl('menuButton')
+    showEl('gameUI')
 
     game.paused = false
 }

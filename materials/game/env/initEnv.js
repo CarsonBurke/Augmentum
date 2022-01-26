@@ -10,6 +10,7 @@ function initEnv() {
     //
 
     const playButton = document.getElementById('playButton')
+    playButton.addEventListener('click', function() { game.unPause() })
     playButton.innerHTML = '<span class="material-icons">play_arrow</span>Resume'
 
     // Create a new game and initialize it
