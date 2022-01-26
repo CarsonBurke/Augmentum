@@ -23,6 +23,7 @@ const structureTypes = {
         description: 'Extracts oil from the ground',
         width: 20,
         height: 20,
+        health: 10,
         produces: {
             oil: 2,
         },
@@ -35,6 +36,7 @@ const structureTypes = {
         description: 'Mines coal and iron from the ground',
         width: 20,
         height: 20,
+        health: 10,
         produces: {
             oil: 2,
         },
@@ -47,6 +49,7 @@ const structureTypes = {
         description: 'Provides housing for workers',
         width: 16,
         height: 21,
+        health: 10,
         housingCapacity: 10,
         produces: {
             money: 5,
@@ -60,6 +63,7 @@ const structureTypes = {
         description: 'Mines coal and iron from the ground',
         width: 20,
         height: 20,
+        health: 10,
         produces: {
             food: 6,
         },
@@ -72,6 +76,7 @@ const structureTypes = {
         description: 'Mines coal and iron from the ground',
         width: 20,
         height: 20,
+        health: 10,
         produces: {
             water: 2,
         },
@@ -84,6 +89,7 @@ const structureTypes = {
         description: 'Mines coal and iron from the ground',
         width: 20,
         height: 20,
+        health: 10,
         consumes: {
             coal: 1,
         },
@@ -98,6 +104,7 @@ const structureTypes = {
         description: 'Mines coal and iron from the ground',
         width: 20,
         height: 20,
+        health: 10,
         consumes: {
             water: 2,
             oil: 2,
@@ -113,6 +120,7 @@ const structureTypes = {
         description: 'Mines coal and iron from the ground',
         width: 20,
         height: 20,
+        health: 10,
         consumes: {
             water: 2,
             oil: 2,
@@ -128,6 +136,7 @@ const structureTypes = {
         description: 'Mines coal and iron from the ground',
         width: 20,
         height: 20,
+        health: 10,
         consumes: {
             steel: 2,
         },
@@ -142,11 +151,12 @@ const structureTypes = {
         description: 'Mines coal and iron from the ground',
         width: 20,
         height: 20,
+        health: 40,
         consumes: {
             ammunition: 1,
         },
         cost: {
-            money: 1000,
+            money: 5000,
         }
     },
 }

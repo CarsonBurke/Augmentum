@@ -6,6 +6,10 @@ class Structure extends GameObject {
         const structure = this
         
         structure.ownerType = ownerType
+
+        if (!structureTypes[type]) return
+        
+        structure.health = structureTypes[type].health
     }
 }
 

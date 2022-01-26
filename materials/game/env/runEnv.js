@@ -62,15 +62,23 @@ function runEnv() {
     
             environmentalists.push(environmentalist)
             
-            const targetAutoCannon = Object.values(game.objects.autoCannon).sort((a, b) => findDistance(environmentalist.left, environmentalist.top, a.left, a.top) - findDistance(environmentalist.left, environmentalist.top, b.left, b.top)).reverse()[0]
+            const targetAutoCannon = Object.values(game.objects.autoCannon).sort((a, b) => findDistance(environmentalist.top, environmentalist.left, a.top, a.left) - findDistance(environmentalist.top, environmentalist.left, b.top, b.left))[0]
         
             if (!targetAutoCannon) continue
 
-            if (targetAutoCannon.top > environmentalist.top) environmentalist.top += environmentalist.moveSpeed
-            else environmentalist.top -= environmentalist.moveSpeed
+            if (findDistance(targetAutoCannon.top, targetAutoCannon.left, environmentalist.top, environmentalist.left) > 40) {
 
-            if (targetAutoCannon.left > environmentalist.left) environmentalist.left += environmentalist.moveSpeed
-            else environmentalist.left -= environmentalist.moveSpeed
+                if (targetAutoCannon.top > environmentalist.top) environmentalist.top += environmentalist.moveSpeed
+                else environmentalist.top -= environmentalist.moveSpeed
+    
+                if (targetAutoCannon.left > environmentalist.left) environmentalist.left += environmentalist.moveSpeed
+                else environmentalist.left -= environmentalist.moveSpeed
+
+                continue
+            }
+
+            targetAutoCannon.health -= 0.05
+            if (targetAutoCannon.health <= 0) targetAutoCannon.delete()
         }
 
         for (const ID in game.objects.autoCannon) {

@@ -211,7 +211,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 450px;
 }
 
 .uiChild {

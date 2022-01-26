@@ -1,8 +1,8 @@
 class Environmentalist extends GameObject {
     constructor(left, top) {
 
-        const width = 40
-        const height = 54
+        const width = 20
+        const height = 27
 
         super('environmentalist', left, top, width, height, document.getElementById('environmentalist'))
 
