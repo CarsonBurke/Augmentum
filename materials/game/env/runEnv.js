@@ -127,9 +127,11 @@ function runEnv() {
 
             if (!autoCannon.angle) autoCannon.angle = -90 * Math.PI / 180
             
-            const targetEnvironmentalist = environmentalists.filter(environmentalist => findDistance(environmentalist.left, environmentalist.top, autoCannon.left, autoCannon.top) < structureTypes.autoCannon.range)[0]
+            const targetEnvironmentalist = environmentalists.sort((a, b) => findDistance(autoCannon.top, autoCannon.left, a.top, a.left) - findDistance(autoCannon.top, autoCannon.left, b.top, b.left))[0]
 
             if (!targetEnvironmentalist) continue
+
+            if (findDistance(targetEnvironmentalist.left, targetEnvironmentalist.top, autoCannon.left, autoCannon.top) > structureTypes.autoCannon.range) continue
 
             autoCannon.angle = Math.atan2((targetEnvironmentalist.top - autoCannon.top), (targetEnvironmentalist.left - autoCannon.left))
             
