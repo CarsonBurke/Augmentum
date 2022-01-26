@@ -30,7 +30,7 @@ const structureTypes = {
             money: 1000,
         }
     },
-    mine: {
+/*     mine: {
         displayName: 'Mine',
         description: 'Mines coal and iron from the ground',
         width: 20,
@@ -41,7 +41,7 @@ const structureTypes = {
         cost: {
             money: 1000,
         }
-    },
+    }, */
     apartment: {
         displayName: 'Apartment',
         description: 'Provides housing for workers',
@@ -67,7 +67,7 @@ const structureTypes = {
             money: 1000,
         }
     },
-    well: {
+/*     well: {
         displayName: 'Mine',
         description: 'Mines coal and iron from the ground',
         width: 20,
@@ -137,7 +137,7 @@ const structureTypes = {
         cost: {
             money: 1000,
         }
-    },
+    }, */
     autoCannon: {
         description: 'Mines coal and iron from the ground',
         width: 20,
@@ -156,13 +156,13 @@ const structureTypes = {
 const resources = [
     'money',
     'food',
-    'water',
+/*     'water', */
     'oil',
     'coal',
-    'iron',
-    'gasoline',
+/*     'iron',
+    'gasoline', */
     'coke',
-    'steel',
+/*     'steel',
     'components',
-    'ammunition',
+    'ammunition', */
 ]

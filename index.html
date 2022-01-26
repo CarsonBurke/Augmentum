@@ -65,13 +65,17 @@
         </div>
     </div>
 
-    <div class="gameUI hidden animate" id="gameUI" onclick="toggleUI('gameUI', 'home')">
+    <div class="gameUI hidden animate" id="gameUI">
 
-        <div class="resourcesParent" id="resourcesParent">
+        <div class="UIParent">
+
+            <div class="resourcesParent" id="resourcesParent">
             
-        </div>
-
-        <div class="structuresParent" id='structuresParent'>
+            </div>
+    
+            <div class="structuresParent" id='structuresParent'>
+    
+            </div>
 
         </div>
 
@@ -80,7 +84,7 @@
             Humans: 0
         </div>
 
-        <button class="menuButton" id='menuButton' onclick="game.togglePause()">
+        <button class="menuButton" id='menuButton' onclick="toggleUI('gameUI', 'home'); game.togglePause()">
             <div class="menuDot"></div>
             <div class="menuDot"></div>
             <div class="menuDot"></div>

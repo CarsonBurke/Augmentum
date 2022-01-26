@@ -288,21 +288,48 @@ body::-webkit-scrollbar-thumb {
     box-shadow: rgba(0, 0, 0, 0.7) 0 0 4px 0;
 }
 
-.resourcesParent {
+.UIParent {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     position: fixed;
     left: 15px;
     top: 15px;
     background: var(--foreground2);
     box-shadow: rgba(0, 0, 0, 0.3) 0 4px 20px 0;
+    overflow-y: hidden;
+}
+
+.UIParent:hover {
+    overflow-y: scroll;
+}
+
+.UIParent::-webkit-scrollbar {
+    width: 23px;
+}
+  
+.UIParent::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+.UIParent::-webkit-scrollbar-thumb {
+    background: var(--foreground1);
+    border-radius: 100px;
+    border-top: 6px solid var(--foreground2);
+    border-left: 6px solid var(--foreground2);
+    border-bottom: 6px solid var(--foreground2);
+    border-right: 6px solid var(--foreground2);
+    transition: all 0.3s;
+}
+
+.resourcesParent {
+    display: flex;
+    flex-direction: column;
 }
 
 .resourceChild {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     padding: 10px;
 }
 
@@ -316,21 +343,22 @@ body::-webkit-scrollbar-thumb {
 }
 
 .structuresParent {
+    border-top: var(--foreground3) solid 2px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    position: fixed;
-    left: 15px;
-    top: 15px;
-    background: var(--foreground2);
-    box-shadow: rgba(0, 0, 0, 0.3) 0 4px 20px 0;
 }
 
 .structureChild {
     display: flex;
     align-items: center;
     padding: 10px;
-    gap: 5px;
+    gap: 10px;
+
+    transition: all 0.2s;
+}
+
+.structureChild:hover {
+    box-shadow: inset rgba(255, 255, 255, 0.12) 0 0 0 10000px;
 }
 
 .structureTitle {
