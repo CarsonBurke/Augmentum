@@ -41,7 +41,7 @@ function runEnv() {
 
         if (tick % 300 == 0) {
 
-            const environmentalistSpawnAmount = Math.floor(Math.random() * tick / 1000)
+            const environmentalistSpawnAmount = Math.floor(Math.random() * 1 / 10000000 * Math.pow(tick, 2))
 
             let newEnvironmentalists = 0
     
