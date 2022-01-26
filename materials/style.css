@@ -207,9 +207,11 @@ body::-webkit-scrollbar-thumb {
     left: 0;
     bottom: 0;
     right: 0;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 500px;
 }
 
 .uiChild {
@@ -231,6 +233,14 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: center;
     gap: 5px;
+}
+
+.uiText {
+    font-size: 15px;
+    font-weight: 300;
+    margin: auto;
+    padding: 10px 20px;
+    text-align: center;
 }
 
 .uiContent {

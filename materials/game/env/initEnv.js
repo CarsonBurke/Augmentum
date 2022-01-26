@@ -13,6 +13,16 @@ function initEnv() {
     playButton.addEventListener('click', function() { game.unPause() })
     playButton.innerHTML = '<span class="material-icons">play_arrow</span>Resume'
 
+    //
+
+    const gameDescription = document.getElementById('gameDescription')
+
+    gameDescription.innerHTML = `Your goal is to build a new company town in this land plot, using the workers to produce oil.
+    <br><br>
+    This will attract of environmentalists. Create turrets to defend your production.
+    <br><br>
+    Remember, our shareholders are counting on you.`
+
     // Create a new game and initialize it
 
     game = new Game()

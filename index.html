@@ -24,6 +24,14 @@
 
             <div class="uiContent">
 
+                <p class="uiText" id="gameDescription">
+                    Welcome to Augmentum! Your goal is to build a new company town in this land plot, using the workers to produce oil.
+                    <br><br>
+                    Sadly this will attract attention of environmentalists, who want to stop pollution and climate change. You'll need to create turrets and supply lines to defend your production.
+                    <br><br>
+                    Remember, our shareholders are counting on you.
+                </p>
+
                 <button class="button greenButton animate" data-show-value='0' id="playButton" onclick="initEnv()" tabindex="0">
                     <span class="material-icons">play_arrow</span>Play
                 </button>
@@ -69,8 +77,8 @@
 
 
         <div class="humanCount" id="humanCount">
-            <span class="material-icons">people</span>
-            Humans: 0</div>
+            Humans: 0
+        </div>
 
         <button class="menuButton" id='menuButton' onclick="game.togglePause()">
             <div class="menuDot"></div>
